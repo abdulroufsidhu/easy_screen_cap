@@ -9,9 +9,6 @@ android {
 	compileSdk = 34
 	
 	defaultConfig {
-		arrMetadata {
-			minCompileSdk = 21
-		}
 		minSdk = 21
 		
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -41,16 +38,30 @@ android {
 	}
 }
 
+publishing {
+	publications {
+		create<MavenPublication>("release") {
+			groupId = "io.github.abdulroufsidhu"
+			artifactId = "easy_screen_capture"
+			version = "0.1-alpha"
+			artifact("$buildDir/outputs/aar/easy_screen_capture-release.aar")
+		}
+	}
+	
+	repositories {
+		maven {
+			name = "GithubPackages"
+			url = uri("https://maven.pkg.github.com/abdulroufsidhu/easy_screen_cap")
+			credentials {
+				username = System.getenv("PERSONAL_GITHUB_USER")
+				password = System.getenv("PERSONAL_GITHUB_TOKEN")
+			}
+		}
+	}
+}
+
 dependencies {
 	
 	implementation("androidx.core:core-ktx:1.12.0")
 	implementation("androidx.appcompat:appcompat:1.6.1")
-}
-
-afterEvaluate {
-	publishing {
-		publications {
-			release
-		}
-	}
 }
