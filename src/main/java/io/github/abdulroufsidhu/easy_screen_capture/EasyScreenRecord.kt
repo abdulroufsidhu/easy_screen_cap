@@ -19,7 +19,9 @@ private const val TAG = "easy-screen-recorder"
 
 /**
  * @author <a href="https://github.com/abdulroufsidhu"> Abdul Rauf </a>
- * @since December 12, 2023
+ * @since December 12, 2023,
+ *
+ *
  * EasyScreenRecord is a main safe library, purposed to ease the screen recording on top of android media projection and media projection manager
  *
  * > ### Usage Example
