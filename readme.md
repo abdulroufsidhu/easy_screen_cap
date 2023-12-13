@@ -40,28 +40,28 @@ false // Include audio in the screen recording (true or false)
 #### `EasyScreenRecord` Class
 Constructor
 
-   - `**EasyScreenRecord(context: Context):**` Initializes the EasyScreenRecord instance with the provided `**Context**`.
+   - **`EasyScreenRecord(context: Context):`** Initializes the EasyScreenRecord instance with the provided **`Context`**.
 
 Properties
 
-   - `**permissionRequest:**` Use this property to request screen capture permission. It returns an `**Intent**` that should be started with `**startActivityForResult**`.
+   - **`permissionRequest:`** Use this property to request screen capture permission. It returns an **`Intent`** that should be started with **`startActivityForResult`**.
 
 Methods
 
-   - `**getProjector(permissionResultCode: Int, permissionResultData: Intent): MediaProjection:**` Must be called in `**onActivityResult**` to obtain the `**MediaProjection**` instance.
+   - **`getProjector(permissionResultCode: Int, permissionResultData: Intent): MediaProjection:`** Must be called in **`onActivityResult`** to obtain the **`MediaProjection`** instance.
 
-   - `**capture(projector: MediaProjection, outputResolution: Size, fileOutputPath: String, recordAudio: Boolean)**`: Captures the screen with the specified settings.
+   - **`capture(projector: MediaProjection, outputResolution: Size, fileOutputPath: String, recordAudio: Boolean)`**: Captures the screen with the specified settings.
 
-   - `**stop(projector: MediaProjection)**`: Stops the screen recording.
+   - **`stop(projector: MediaProjection)`**: Stops the screen recording.
 
 #### Implementation Details
 ##### Dependencies
 
-   - The library relies on the Android `**MediaProjectionManager**` and `**MediaProjection**` for screen capture.
+   - The library relies on the Android **`MediaProjectionManager`** and **`MediaProjection`** for screen capture.
 
 #### Important Notes
 
-   - The `**capture**` method runs on the IO dispatcher, while the `**stop**` method runs on the Main dispatcher to interact with UI elements.
+   - The **`capture`** method runs on the IO dispatcher, while the **`stop`** method runs on the Main dispatcher to interact with UI elements.
 
    - Screen recording is done in the background using a coroutine.
 
@@ -105,26 +105,26 @@ CoroutineScope(Dispatchers.IO).launch {
 #### `EasyScreenshot` Class
 Constructor
 
-   - `**EasyScreenshot(context: Context):**` Initializes the EasyScreenshot instance with the provided `**Context**`.
+   - **`EasyScreenshot(context: Context):`** Initializes the EasyScreenshot instance with the provided **`Context`**.
 
 Properties
 
-   - `**permissionRequest**`: Use this property to request screen capture permission. It returns an `**Intent**` that should be started with `**startActivityForResult**`.
+   - **`permissionRequest`**: Use this property to request screen capture permission. It returns an **`Intent`** that should be started with **`startActivityForResult`**.
 
 Methods
 
-   - `**getProjector(permissionResultCode: Int, permissionResultData: Intent): MediaProjection**`: Must be called in `**onActivityResult**` to obtain the `**MediaProjection**` instance.
+   - **`getProjector(permissionResultCode: Int, permissionResultData: Intent): MediaProjection`**: Must be called in **`onActivityResult`** to obtain the **`MediaProjection`** instance.
 
-   - `**capture(projector: MediaProjection, outputResolution: Size, fileOutputPath: String, onFileSaved: () -> Unit)**`: Captures a screenshot with the specified settings and invokes the `**onFileSaved**` lambda function when the file is saved.
+   - **`capture(projector: MediaProjection, outputResolution: Size, fileOutputPath: String, onFileSaved: () -> Unit)`**: Captures a screenshot with the specified settings and invokes the **`onFileSaved`** lambda function when the file is saved.
 
 #### Implementation Details
 ##### Dependencies
 
-   - The library relies on the Android `**MediaProjectionManager**` and `**MediaProjection**` for screen capture.
+   - The library relies on the Android **`MediaProjectionManager`** and **`MediaProjection`** for screen capture.
 
 ### Important Notes
 
-   - The `**capture**` method runs on the IO dispatcher.
+   - The **`capture`** method runs on the IO dispatcher.
 
    - Screenshot capturing is done in the background using a coroutine.
 
