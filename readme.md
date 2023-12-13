@@ -39,11 +39,11 @@ The EasyScreenCapture library is a powerful yet simple-to-use Android library th
 
 ### Implementation Details
 
-   - `**Dependencies**`: The library relies on the Android `**MediaProjectionManager**` and `**MediaProjection**` for screen capture.
+   - **`Dependencies`**: The library relies on the Android **`MediaProjectionManager`** and **`MediaProjection`** for screen capture.
 
-   - `**Threading**`: The library efficiently manages threading, executing background tasks on the IO dispatcher and interacting with UI elements on the Main dispatcher.
+   - **`Threading`**: The library efficiently manages threading, executing background tasks on the IO dispatcher and interacting with UI elements on the Main dispatcher.
 
-   - `**Resource Cleanup**`: Automatic release of resources and stopping of media projection after completing screen recording or screenshot capture.
+   - **`Resource Cleanup`**: Automatic release of resources and stopping of media projection after completing screen recording or screenshot capture.
 
    EasyScreenCapture simplifies the implementation of screen recording and screenshot capturing, making it a valuable addition to your Android development toolkit.
 
