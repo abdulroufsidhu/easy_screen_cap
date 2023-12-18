@@ -133,7 +133,7 @@ class EasyScreenRecord(private val context: Context) {
 		mediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
 		mediaRecorder?.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
 		if(recordAudio) {
-			mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+			mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
 		}
 		val bit = 1
 		val kBit = 1000 * bit
