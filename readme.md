@@ -71,12 +71,12 @@ val projector = screenRecorder.getProjector(resultCode, data)
 
 // Capture the screen with specified settings
 CoroutineScope(Dispatchers.IO).launch {
-screenRecorder.capture(
-projector,
-Size(1280, 1280), // Output file resolution in pixels (1:1 aspect ratio recommended)
-storagePath + "fileName.png", // Path where the file shall be saved
-false // Include audio in the screen recording (true or false)
-)
+   screenRecorder.capture(
+   projector,
+   Size(1280, 1280), // Output file resolution in pixels (1:1 aspect ratio recommended)
+   storagePath + "fileName.png", // Path where the file shall be saved
+   false // Include audio in the screen recording (true or false)
+   )
 
     val timeInMillisToRecord = 30000 // 30 seconds
     delay(timeInMillisToRecord)
