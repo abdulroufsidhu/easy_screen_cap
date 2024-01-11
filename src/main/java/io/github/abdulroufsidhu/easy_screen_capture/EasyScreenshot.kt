@@ -108,6 +108,7 @@ class EasyScreenshot(private val context: Context) {
 				} catch (e: Throwable) {
 					Log.w(TAG, "captureScreenshot: $e", e)
 				} finally {
+					reader.close()
 					projector.stop()
 					projector.unregisterCallback(projectionCallback)
 				}
